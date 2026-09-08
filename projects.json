@@ -128,8 +128,8 @@
     "cornerstonesvcs-website-repo": {
       "client": "Cornerstone Services (Stephen Williams)",
       "category": "Client sites",
-      "grade": "C-",
-      "note": "Not under version control. Highest priority in the portfolio: git init and push.",
+      "grade": "B+",
+      "note": "Live and passing site-checks clean. srcset across the gallery, self-hosted fonts so zero external requests, schema on 8 pages, light-mode lock and print stylesheet, WCAG AA verified by measurement. The repo was flattened 2026-09-06 so the folder is now the git root; the old note claiming it was unversioned was a top-level .git scan missing the subfolder. Launch blockers: Formspree ID and a domain. Two of six service tiles are still stock, pending drywall and remodel photos.",
       "site": true,
       "eyebrow": "PAINTING / TRADES",
       "blurb": "A painting contractor site: services offered, recent work, and a quote request."

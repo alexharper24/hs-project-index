@@ -44,7 +44,7 @@
   "cornerstonesvcs-website-repo": {
     "at": "2026-09-08 07:48",
     "kb": 41,
-    "src": "local:cornerstonesvcs-website-repo/web",
+    "src": "local:cornerstonesvcs-website-repo",
     "url": "http://localhost:8500/"
   },
   "detailzmatter-website-repo": {
