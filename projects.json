@@ -15,7 +15,11 @@
       "client": "Harper Studio",
       "category": "Harper Studio",
       "grade": "A-",
-      "note": "Own studio site. GBP is live at 5.0 with 2 reviews. Open: services list, owner photos, zero citations."
+      "note": "Own studio site. GBP is live at 5.0 with 2 reviews. Open: services list, owner photos, zero citations.",
+      "site": true,
+      "eyebrow": "WEB DESIGN STUDIO",
+      "blurb": "My own studio site: services, plans, written guarantees, and case studies.",
+      "capture_local": true
     },
     "hs-proposals": {
       "client": "Quotes and referral sheets",
@@ -26,103 +30,154 @@
       "client": "Bless Your Paws",
       "category": "Client sites",
       "grade": "A-",
-      "note": "Best image pipeline in the portfolio: srcset, 74 percent WebP, content-hash cache busting. Open: skip links, 90 missing alt, no CI."
+      "note": "Best image pipeline in the portfolio: srcset, 74 percent WebP, content-hash cache busting. Open: skip links, 90 missing alt, no CI.",
+      "site": true,
+      "eyebrow": "BREEDER / LOCAL BUSINESS",
+      "blurb": "A breeder site with per-puppy pages, a waitlist, a purchase agreement, and a full responsive photo pipeline."
     },
     "carvercowood-website-repo": {
       "client": "Carver Co Wood",
       "category": "Client sites",
       "grade": "B+",
-      "note": "Rich schema with AggregateRating and FAQPage. Gallery page is 3.8 MB."
+      "note": "Rich schema with AggregateRating and FAQPage. Gallery page is 3.8 MB.",
+      "site": true,
+      "eyebrow": "WOODWORKING / TRADES",
+      "blurb": "Family-owned woodworking in Louisville: live-edge tables, epoxy bar tops, and custom furniture from local hardwood."
     },
     "faithsblissfuldelights-website-repo": {
       "client": "Faith's Blissful Delights",
       "category": "Client sites",
       "grade": "B",
-      "note": "Live on custom domain but missing .nojekyll and a 404. Overview page is 3.9 MB."
+      "note": "Live on custom domain but missing .nojekyll and a 404. Overview page is 3.9 MB.",
+      "site": true,
+      "eyebrow": "BAKERY / LOCAL BUSINESS",
+      "blurb": "A made-to-order home bakery in Bellevue, Ohio: a sweet menu and gallery, plus a simple custom-order request flow."
     },
     "kingdomfamilycompanions-website-repo": {
       "client": "Kingdom Family Companions",
       "category": "Client sites",
       "grade": "B+",
-      "note": "Launch blockers: Formspree ID, health claim wording versus the OFA records, two visible placeholders."
+      "note": "Launch blockers: Formspree ID, health claim wording versus the OFA records, two visible placeholders.",
+      "site": true,
+      "eyebrow": "BREEDER / LOCAL BUSINESS",
+      "blurb": "A static rebuild replacing a Wix cart with an inquiry-first flow, plus linked health testing for every parent dog."
     },
     "lorihuss-website-repo": {
       "client": "Lori Huss",
       "category": "Client sites",
       "grade": "A-",
-      "note": "Only repo that passes site-checks completely clean alongside Bless Your Paws."
+      "note": "Only repo that passes site-checks completely clean alongside Bless Your Paws.",
+      "site": true,
+      "eyebrow": "COACHING / CONSULTING",
+      "blurb": "A Louisville leadership and well-being coach: one-on-one coaching, speaking, and healthcare consulting."
     },
     "marysbakingcorner-website-repo": {
       "client": "Mary's Baking Corner",
       "category": "Client sites",
       "grade": "B-",
-      "note": "Thin at 1,454 words across 5 pages. Schema on one page only."
+      "note": "Thin at 1,454 words across 5 pages. Schema on one page only.",
+      "site": true,
+      "eyebrow": "BAKERY / LOCAL BUSINESS",
+      "blurb": "A home bakery site with a menu, a gallery, and an order request form."
     },
     "mldesigns-website-repo": {
       "client": "ML Designs (Matt Lapina)",
       "category": "Client sites",
       "grade": "C",
-      "note": "work.html is 14.2 MB fully loaded. Highest priority performance fix in the portfolio."
+      "note": "work.html is 14.2 MB fully loaded. Highest priority performance fix in the portfolio.",
+      "site": true,
+      "eyebrow": "DESIGN / TRADES",
+      "blurb": "A portfolio site for a design and build shop, organized around finished work."
     },
     "phillipshaircutting-website-repo": {
       "client": "Phillips Haircutting",
       "category": "Client sites",
       "grade": "B-",
-      "note": "Good HairSalon schema. Thin at 1,174 words, no 404, no image dimensions."
+      "note": "Good HairSalon schema. Thin at 1,174 words, no 404, no image dimensions.",
+      "site": true,
+      "eyebrow": "SALON / LOCAL BUSINESS",
+      "blurb": "A haircutting site with services, hours, and directions."
     },
     "auburnmuse-website-repo": {
       "client": "Auburn Muse (Emmi Breazeale)",
       "category": "Client sites",
       "grade": "B",
-      "note": "Draft. Pending Formspree ID, more photos, socials, domain."
+      "note": "Draft. Pending Formspree ID, more photos, socials, domain.",
+      "site": true,
+      "eyebrow": "PHOTOGRAPHY",
+      "blurb": "A photography portfolio with a filterable gallery and a simple booking inquiry."
     },
     "detailzmatter-website-repo": {
       "client": "Detailz Matter (Logan Heun)",
       "category": "Client sites",
       "grade": "C+",
-      "note": "Draft. Tracks 62 source photos despite a .gitignore. Only 2 of 6 pages have one H1. No CI."
+      "note": "Draft. Tracks 62 source photos despite a .gitignore. Only 2 of 6 pages have one H1. No CI.",
+      "site": true,
+      "eyebrow": "AUTO DETAILING",
+      "blurb": "A detailing site with service tiers, a gallery of finished work, and a booking request."
     },
     "breazealebros-website-repo": {
       "client": "Breazeale Bros",
       "category": "Client sites",
       "grade": "C+",
-      "note": "No 404, no image dimensions anywhere, leftover OnePage preview to delete."
+      "note": "No 404, no image dimensions anywhere, leftover OnePage preview to delete.",
+      "site": true,
+      "eyebrow": "CONTRACTING / TRADES",
+      "blurb": "A handyman and general contractor in Montgomery, Texas: roofing, concrete, remodels, tile, and repairs."
     },
     "cornerstonesvcs-website-repo": {
       "client": "Cornerstone Services (Stephen Williams)",
       "category": "Client sites",
       "grade": "C-",
-      "note": "Not under version control. Highest priority in the portfolio: git init and push."
+      "note": "Not under version control. Highest priority in the portfolio: git init and push.",
+      "site": true,
+      "eyebrow": "PAINTING / TRADES",
+      "blurb": "A painting contractor site: services offered, recent work, and a quote request."
     },
     "calvaryroad-website-repo": {
       "client": "Calvary Road Baptist Church",
       "category": "Churches",
       "grade": "A-",
-      "note": "Standout: 11 legacy redirect stubs preserve 20 years of inbound links."
+      "note": "Standout: 11 legacy redirect stubs preserve 20 years of inbound links.",
+      "site": true,
+      "eyebrow": "CHURCH / COMMUNITY",
+      "blurb": "Moved a New Albany, Indiana congregation off a twenty-year-old platform onto a fast, mobile-first site they own outright."
     },
     "hope-website-repo": {
       "client": "Hope Baptist Church, Warsaw",
       "category": "Churches",
       "grade": "B",
-      "note": "Most under-built of the live sites. Schema on 1 of 8 pages, no 404, no image dimensions."
+      "note": "Most under-built of the live sites. Schema on 1 of 8 pages, no 404, no image dimensions.",
+      "site": true,
+      "eyebrow": "CHURCH / COMMUNITY",
+      "blurb": "A warm site for a Warsaw, Indiana congregation: service times, directions, and a welcoming path for first-time visitors."
     },
     "lbc-website-repo": {
       "client": "Lighthouse Baptist Church, Marion",
       "category": "Churches",
       "grade": "B",
-      "note": "All 37 checker errors come from one leftover crop-options.html. Delete it and add CI."
+      "note": "All 37 checker errors come from one leftover crop-options.html. Delete it and add CI.",
+      "site": true,
+      "eyebrow": "CHURCH / COMMUNITY",
+      "blurb": "A static rebuild for a Marion, Indiana congregation, replacing a hosted template while keeping Breeze and Tithe.ly."
     },
     "roanoke-website-repo": {
       "client": "Roanoke Baptist Church",
       "category": "Churches",
       "grade": "B+",
-      "note": "Staff self-publish the Torch newsletter. Missing .nojekyll. Cloudflare cutover pending."
+      "note": "Staff self-publish the Torch newsletter. Missing .nojekyll. Cloudflare cutover pending.",
+      "site": true,
+      "eyebrow": "CHURCH / COMMUNITY",
+      "blurb": "A church site on Cloudflare where staff publish the monthly Torch newsletter themselves."
     },
     "inf-website": {
       "client": "Infinite Solutions",
       "category": "Infinite Solutions",
       "grade": "A-",
-      "note": "Live commercial site with no robots.txt and no sitemap.xml. Four live JobPostings valid through Oct 31."
+      "note": "Live commercial site with no robots.txt and no sitemap.xml. Four live JobPostings valid through Oct 31.",
+      "site": true,
+      "eyebrow": "TECHNOLOGY & LEADERSHIP",
+      "blurb": "A corporate site for an IT and leadership firm: services, who they serve, careers, and an easy way to start a conversation."
     },
     "inf-escalation-process-repo": {
       "client": "Escalation routing",
@@ -179,7 +234,10 @@
       "client": "Williams Sisters cookbook",
       "category": "Personal",
       "grade": "B-",
-      "note": "Generated from data/*.json by scripts/build_site.py. Edit the JSON, not the HTML. kitchens.html is 8 MB."
+      "note": "Generated from data/*.json by scripts/build_site.py. Edit the JSON, not the HTML. kitchens.html is 8 MB.",
+      "site": true,
+      "eyebrow": "FAMILY / COOKBOOK",
+      "blurb": "A seven-sister family cookbook, generated from JSON, with a per-sister login editor."
     },
     "site-checks": {
       "client": "Static site checker",
@@ -199,12 +257,19 @@
     "braveheartedbirth-website-repo": {
       "client": "Bravehearted Birth",
       "category": "Research and drafts",
-      "note": "Single page design mockup, not a build. Copy needs the em dash pass."
+      "note": "Single page design mockup, not a build. Copy needs the em dash pass.",
+      "site": true,
+      "eyebrow": "MOCKUP / CONCEPT",
+      "blurb": "A single-page redesign mockup rather than a build.",
+      "entry": "mockup-homepage.html"
     },
     "laytonchapel-website-repo": {
       "client": "Layton Chapel",
       "category": "Churches",
-      "note": "Static rebuild replacing a SermonAudio template. Durability-first content, keyless YouTube embeds, brand green #00A652."
+      "note": "Static rebuild replacing a SermonAudio template. Durability-first content, keyless YouTube embeds, brand green #00A652.",
+      "site": true,
+      "eyebrow": "CHURCH / COMMUNITY",
+      "blurb": "A Gospel-focused rebuild for a Spring Lake, North Carolina church: service times, what they believe, and sermons."
     },
     "inf-keeper-provisioning": {
       "client": "Keeper provisioning",

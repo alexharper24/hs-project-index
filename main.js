@@ -1,24 +1,28 @@
-/* Project Index — filter and copy-path. No dependencies. */
+/* Site Portfolio — filter, count, copy-path. No dependencies. */
 
 (function () {
   const q = document.getElementById('q');
   const onlyTodo = document.getElementById('onlyTodo');
-  const cards = [...document.querySelectorAll('.card')];
-  const cats = [...document.querySelectorAll('.cat')];
+  const countEl = document.getElementById('count');
+  const emptyEl = document.getElementById('empty');
+  const grid = document.getElementById('grid');
+  const cards = [...document.querySelectorAll('.wcard')];
 
   function apply() {
     const term = (q.value || '').trim().toLowerCase();
     const todoOnly = onlyTodo.checked;
+    let shown = 0;
     cards.forEach(c => {
-      const matchTerm = !term || c.dataset.hay.includes(term);
-      const matchTodo = !todoOnly || Number(c.dataset.todo) > 0;
-      c.classList.toggle('hide', !(matchTerm && matchTodo));
+      const ok = (!term || c.dataset.hay.includes(term)) &&
+                 (!todoOnly || Number(c.dataset.todo) > 0);
+      c.classList.toggle('hide', !ok);
+      if (ok) shown++;
     });
-    // hide a category heading once every card under it is filtered out
-    cats.forEach(sec => {
-      const any = [...sec.querySelectorAll('.card')].some(c => !c.classList.contains('hide'));
-      sec.classList.toggle('hide', !any);
-    });
+    countEl.textContent = shown === cards.length
+      ? `${cards.length} sites`
+      : `${shown} of ${cards.length}`;
+    emptyEl.hidden = shown !== 0;
+    grid.hidden = shown === 0;
   }
 
   q.addEventListener('input', apply);
@@ -33,27 +37,30 @@
   // Copy the local path. The clipboard API needs a secure context; localhost
   // counts, but fall back to a hidden textarea for file:// just in case.
   document.querySelectorAll('.copy').forEach(btn => {
+    const label = btn.querySelector('span');
     btn.addEventListener('click', async () => {
-      const text = btn.dataset.copy;
       let ok = false;
       try {
-        await navigator.clipboard.writeText(text);
+        await navigator.clipboard.writeText(btn.dataset.copy);
         ok = true;
       } catch (_) {
         const ta = document.createElement('textarea');
-        ta.value = text;
+        ta.value = btn.dataset.copy;
         ta.setAttribute('readonly', '');
-        ta.style.cssText = 'position:absolute;left:-9999px';
+        ta.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)';
         document.body.appendChild(ta);
         ta.select();
         try { ok = document.execCommand('copy'); } catch (__) { ok = false; }
         ta.remove();
       }
-      const original = btn.textContent;
-      btn.textContent = ok ? 'Copied' : 'Copy failed';
+      const first = btn.firstChild;
+      const original = first.textContent;
+      first.textContent = ok ? 'Copied ' : 'Copy failed ';
+      if (label) label.textContent = ok ? '✓' : '✗';
       btn.classList.toggle('copied', ok);
       setTimeout(() => {
-        btn.textContent = original;
+        first.textContent = original;
+        if (label) label.textContent = '→';
         btn.classList.remove('copied');
       }, 1400);
     });
