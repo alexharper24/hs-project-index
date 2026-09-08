@@ -252,7 +252,8 @@
     "puppyconnection-website-repo": {
       "client": "Puppy Connection (Amber Blakeslee)",
       "category": "Research and drafts",
-      "note": "Harvest stage. 107 files of scraped copy, no built site, no git yet."
+      "note": "Harvest stage: 107 files of scraped copy, no built site, no git. site:false keeps it off the grid until there is something to show.",
+      "site": false
     },
     "braveheartedbirth-website-repo": {
       "client": "Bravehearted Birth",

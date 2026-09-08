@@ -1,126 +1,126 @@
 """
-Card rendering for the project index, in the same shape as the work grid on
+Card rendering for the site portfolio, shaped like the work grid on
 harperstudio.co: screenshot on top, category eyebrow, serif title, one-line
-description, then the links.
+description, one link.
 
-Imported by build.py. Kept separate so the scanning logic and the markup can
-be changed independently.
+The whole card is a single <a>. There is exactly one action per card, so
+wrapping it avoids nested interactive elements and keeps it keyboard
+reachable with one tab stop.
+
+Imported by build.py.
 """
 
 import os
 
-STATUS_ORDER = {"live": 0, "pushed": 1, "draft": 2, "no-git": 3, "other": 4}
+HERE = os.path.dirname(os.path.abspath(__file__))
 
+STATUS_ORDER = {"live": 0, "pushed": 1, "draft": 2, "no-git": 3, "other": 4}
 STATUS_LABEL = {
-    "live": "Live",
-    "pushed": "Built",
-    "draft": "Draft",
-    "no-git": "No git",
-    "other": "Other",
+    "live": "Live", "pushed": "Built", "draft": "Draft",
+    "no-git": "No git", "other": "Other",
 }
 
 
 def esc(s):
     return (
-        str(s)
-        .replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
+        str(s).replace("&", "&amp;").replace("<", "&lt;")
+        .replace(">", "&gt;").replace('"', "&quot;")
     )
 
 
 def eyebrow_slug(eyebrow):
-    """Map an eyebrow label to a colour class, so a category reads at a glance."""
     e = (eyebrow or "").lower()
-    if "church" in e:
-        return "church"
-    if "bakery" in e:
-        return "bakery"
-    if "breeder" in e:
-        return "breeder"
-    if "trades" in e or "contracting" in e or "painting" in e or "woodworking" in e:
-        return "trades"
-    if "photo" in e:
-        return "photo"
-    if "technology" in e or "web design" in e:
-        return "tech"
-    if "coaching" in e or "consulting" in e:
-        return "coach"
-    if "salon" in e or "detailing" in e:
-        return "service"
-    if "mockup" in e or "concept" in e:
-        return "concept"
+    for needle, slug in (
+        ("church", "church"), ("bakery", "bakery"), ("breeder", "breeder"),
+        ("trades", "trades"), ("contracting", "trades"), ("painting", "trades"),
+        ("woodworking", "trades"), ("photo", "photo"), ("technology", "tech"),
+        ("web design", "tech"), ("coaching", "coach"), ("consulting", "coach"),
+        ("salon", "service"), ("detailing", "service"),
+        ("mockup", "concept"), ("concept", "concept"),
+    ):
+        if needle in e:
+            return slug
     return "other"
 
 
-def card(x, tiles_dir="img/tiles"):
-    """One site card. x is the dict built by build.scan() plus overlay fields."""
+def target(x, public=False):
+    """Where the card points. Live domain first; local preview otherwise.
+
+    On a public build a localhost link is useless to a visitor, so a site
+    with no domain gets no link at all.
+    """
+    if x.get("domain"):
+        return "https://%s/" % x["domain"], "Visit site"
+    if public:
+        return "", ""
+    for p in x.get("previews", []):
+        if p.get("port"):
+            return "http://localhost:%s/" % p["port"], "Visit site"
+    return "", ""
+
+
+def card(x, tiles_dir="img/tiles", public=False):
     A = []
     a = A.append
 
     title = x["client"] or x["repo"]
-    tile = os.path.join(tiles_dir, x["repo"] + ".jpg").replace(os.sep, "/")
-    has_tile = os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), tile))
+    tile = (tiles_dir + "/" + x["repo"] + ".jpg")
+    has_tile = os.path.exists(os.path.join(HERE, tile.replace("/", os.sep)))
+    href, label = target(x, public)
 
     hay = " ".join([x["repo"], title, x.get("domain", ""), x.get("eyebrow", "")]).lower()
 
-    # the audit note rides along as a tooltip so it is not lost at this width
-    tip = (' title="%s"' % esc(x["note"])) if x.get("note") else ""
+    # The card is a link when there is somewhere to go, a plain article when not.
+    if href:
+        a('<a class="wcard s-%s" href="%s" target="_blank" rel="noopener" '
+          'data-hay="%s" data-todo="%d" data-status="%s" aria-label="%s, open the site">'
+          % (x["status"], esc(href), esc(hay), x["todo"], esc(x["status"]), esc(title)))
+    else:
+        a('<article class="wcard nolink s-%s" data-hay="%s" data-todo="%d" data-status="%s">'
+          % (x["status"], esc(hay), x["todo"], esc(x["status"])))
 
-    a('<article class="wcard s-%s" data-hay="%s" data-todo="%d" data-status="%s"%s>'
-      % (x["status"], esc(hay), x["todo"], esc(x["status"]), tip))
-
-    # ---- thumbnail ----
     a('<div class="shot">')
     if has_tile:
-        a('<img src="%s?v=1" alt="Homepage of %s" width="640" height="400" loading="lazy" decoding="async">'
-          % (esc(tile), esc(title)))
+        a('<img src="%s?v=2" alt="Homepage of %s" width="640" height="400" '
+          'loading="lazy" decoding="async">' % (esc(tile), esc(title)))
     else:
-        a('<div class="noshot"><span>no capture</span></div>')
-    a('<span class="stat s-%s">%s</span>' % (x["status"], esc(STATUS_LABEL.get(x["status"], x["status"]))))
+        a('<span class="noshot"><span>no capture</span></span>')
+    a('<span class="stat s-%s">%s</span>'
+      % (x["status"], esc(STATUS_LABEL.get(x["status"], x["status"]))))
     a("</div>")
 
-    # ---- body ----
     a('<div class="wbody">')
     if x.get("eyebrow"):
-        a('<p class="eyebrow e-%s">%s</p>' % (eyebrow_slug(x["eyebrow"]), esc(x["eyebrow"])))
-    a("<h3>%s</h3>" % esc(title))
+        a('<span class="eyebrow e-%s">%s</span>'
+          % (eyebrow_slug(x["eyebrow"]), esc(x["eyebrow"])))
+    # a heading inside <a> is valid (transparent content model) and keeps the
+    # grid navigable by heading for screen readers
+    a('<h3 class="wtitle">%s</h3>' % esc(title))
     if x.get("blurb"):
-        a('<p class="blurb">%s</p>' % esc(x["blurb"]))
+        a('<span class="blurb">%s</span>' % esc(x["blurb"]))
 
-    # compact meta line
-    bits = []
-    if x.get("grade"):
-        bits.append("Grade %s" % esc(x["grade"]))
-    if x["pages"]:
-        bits.append("%d pages" % x["pages"])
-    if x["todo"]:
-        bits.append('<b class="warn">%d open</b>' % x["todo"])
-    if x.get("dirty"):
-        bits.append('<b class="warn">uncommitted</b>')
-    if bits:
-        a('<p class="meta">%s</p>' % " &middot; ".join(bits))
+    if not public:
+        bits = []
+        if x.get("grade"):
+            bits.append("Grade %s" % esc(x["grade"]))
+        if x["pages"]:
+            bits.append("%d pages" % x["pages"])
+        if x["todo"]:
+            bits.append('<b class="warn">%d open</b>' % x["todo"])
+        if x.get("dirty"):
+            bits.append('<b class="warn">uncommitted</b>')
+        if bits:
+            a('<span class="meta">%s</span>' % " &middot; ".join(bits))
 
-    # ---- links ----
-    a('<div class="wlinks">')
-    if x.get("domain"):
-        a('<a class="go" href="https://%s/" target="_blank" rel="noopener">Visit site <span>&rarr;</span></a>'
-          % esc(x["domain"]))
-    for p in x.get("previews", []):
-        if p.get("port"):
-            a('<a class="go" href="http://localhost:%s/" target="_blank" rel="noopener" '
-              'title="Start it first: preview_start({name: &quot;%s&quot;})">Open preview <span>&rarr;</span></a>'
-              % (esc(p["port"]), esc(p["name"])))
-            break
-    if x.get("remote"):
-        a('<a class="sub-link" href="https://%s" target="_blank" rel="noopener">Repo <span>&rarr;</span></a>'
-          % esc(x["remote"]))
-    a('<button class="sub-link copy" data-copy="%s">Copy path <span>&rarr;</span></button>' % esc(x["path"]))
-    a("</div>")
+    a('<span class="wlinks">')
+    if href:
+        a('<span class="go">%s <span class="arw">&rarr;</span></span>' % esc(label))
+    else:
+        a('<span class="go muted">Not published</span>')
+    a("</span>")   # .wlinks
 
-    a("</div>")   # .wbody
-    a("</article>")
+    a("</div>")    # .wbody
+    a("</a>" if href else "</article>")
     return "\n".join(A)
 
 

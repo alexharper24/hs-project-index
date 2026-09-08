@@ -1,8 +1,6 @@
-# Generated. Regenerate with `python build.py`.
-# Kept out of git so an accidental push carries no client data: the page
-# embeds client names, draft-site status, and local filesystem paths.
+# The INTERNAL page. Carries grades, open-item counts, uncommitted flags, and
+# local filesystem paths, so it must never reach the public repo.
+# Regenerate with `python build.py`.
 index.html
 
-# Captured screenshots of client sites. Regenerate with `python capture.py`.
-img/tiles/
 __pycache__/
