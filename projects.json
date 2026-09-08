@@ -1,0 +1,215 @@
+{
+  "_comment": "Hand-maintained overlay. Everything else on the page is derived from disk by build.py. Grades come from the portfolio audit; re-audit before trusting an old one.",
+  "categories": [
+    "Harper Studio",
+    "Client sites",
+    "Churches",
+    "Infinite Solutions",
+    "Prestige",
+    "Personal",
+    "Shared tooling",
+    "Research and drafts"
+  ],
+  "projects": {
+    "alexharper-website-repo": {
+      "client": "Harper Studio",
+      "category": "Harper Studio",
+      "grade": "A-",
+      "note": "Own studio site. GBP is live at 5.0 with 2 reviews. Open: services list, owner photos, zero citations."
+    },
+    "hs-proposals": {
+      "client": "Quotes and referral sheets",
+      "category": "Harper Studio",
+      "note": "Client pricing and referral arrangements. Local git, no remote, deliberately."
+    },
+    "blessyourpaws-website-repo": {
+      "client": "Bless Your Paws",
+      "category": "Client sites",
+      "grade": "A-",
+      "note": "Best image pipeline in the portfolio: srcset, 74 percent WebP, content-hash cache busting. Open: skip links, 90 missing alt, no CI."
+    },
+    "carvercowood-website-repo": {
+      "client": "Carver Co Wood",
+      "category": "Client sites",
+      "grade": "B+",
+      "note": "Rich schema with AggregateRating and FAQPage. Gallery page is 3.8 MB."
+    },
+    "faithsblissfuldelights-website-repo": {
+      "client": "Faith's Blissful Delights",
+      "category": "Client sites",
+      "grade": "B",
+      "note": "Live on custom domain but missing .nojekyll and a 404. Overview page is 3.9 MB."
+    },
+    "kingdomfamilycompanions-website-repo": {
+      "client": "Kingdom Family Companions",
+      "category": "Client sites",
+      "grade": "B+",
+      "note": "Launch blockers: Formspree ID, health claim wording versus the OFA records, two visible placeholders."
+    },
+    "lorihuss-website-repo": {
+      "client": "Lori Huss",
+      "category": "Client sites",
+      "grade": "A-",
+      "note": "Only repo that passes site-checks completely clean alongside Bless Your Paws."
+    },
+    "marysbakingcorner-website-repo": {
+      "client": "Mary's Baking Corner",
+      "category": "Client sites",
+      "grade": "B-",
+      "note": "Thin at 1,454 words across 5 pages. Schema on one page only."
+    },
+    "mldesigns-website-repo": {
+      "client": "ML Designs (Matt Lapina)",
+      "category": "Client sites",
+      "grade": "C",
+      "note": "work.html is 14.2 MB fully loaded. Highest priority performance fix in the portfolio."
+    },
+    "phillipshaircutting-website-repo": {
+      "client": "Phillips Haircutting",
+      "category": "Client sites",
+      "grade": "B-",
+      "note": "Good HairSalon schema. Thin at 1,174 words, no 404, no image dimensions."
+    },
+    "auburnmuse-website-repo": {
+      "client": "Auburn Muse (Emmi Breazeale)",
+      "category": "Client sites",
+      "grade": "B",
+      "note": "Draft. Pending Formspree ID, more photos, socials, domain."
+    },
+    "detailzmatter-website-repo": {
+      "client": "Detailz Matter (Logan Heun)",
+      "category": "Client sites",
+      "grade": "C+",
+      "note": "Draft. Tracks 62 source photos despite a .gitignore. Only 2 of 6 pages have one H1. No CI."
+    },
+    "breazealebros-website-repo": {
+      "client": "Breazeale Bros",
+      "category": "Client sites",
+      "grade": "C+",
+      "note": "No 404, no image dimensions anywhere, leftover OnePage preview to delete."
+    },
+    "cornerstonesvcs-website-repo": {
+      "client": "Cornerstone Services (Stephen Williams)",
+      "category": "Client sites",
+      "grade": "C-",
+      "note": "Not under version control. Highest priority in the portfolio: git init and push."
+    },
+    "calvaryroad-website-repo": {
+      "client": "Calvary Road Baptist Church",
+      "category": "Churches",
+      "grade": "A-",
+      "note": "Standout: 11 legacy redirect stubs preserve 20 years of inbound links."
+    },
+    "hope-website-repo": {
+      "client": "Hope Baptist Church, Warsaw",
+      "category": "Churches",
+      "grade": "B",
+      "note": "Most under-built of the live sites. Schema on 1 of 8 pages, no 404, no image dimensions."
+    },
+    "lbc-website-repo": {
+      "client": "Lighthouse Baptist Church, Marion",
+      "category": "Churches",
+      "grade": "B",
+      "note": "All 37 checker errors come from one leftover crop-options.html. Delete it and add CI."
+    },
+    "roanoke-website-repo": {
+      "client": "Roanoke Baptist Church",
+      "category": "Churches",
+      "grade": "B+",
+      "note": "Staff self-publish the Torch newsletter. Missing .nojekyll. Cloudflare cutover pending."
+    },
+    "inf-website": {
+      "client": "Infinite Solutions",
+      "category": "Infinite Solutions",
+      "grade": "A-",
+      "note": "Live commercial site with no robots.txt and no sitemap.xml. Four live JobPostings valid through Oct 31."
+    },
+    "inf-escalation-process-repo": {
+      "client": "Escalation routing",
+      "category": "Infinite Solutions"
+    },
+    "inf-help-center-repo": {
+      "client": "Internal help center",
+      "category": "Infinite Solutions",
+      "note": "Articles and assistant only. Azure not provisioned."
+    },
+    "inf-learning-repo": {
+      "client": "Certification tracker",
+      "category": "Infinite Solutions",
+      "note": "Phase 0 built. Pending corrections email, GHE remote, Azure."
+    },
+    "inf-projects-dashboard-repo": {
+      "client": "Projects dashboard",
+      "category": "Infinite Solutions",
+      "note": "Governance overlay on ConnectWise, not a PM tool."
+    },
+    "inf-pto-dashboard-repo": {
+      "client": "PTO dashboard",
+      "category": "Infinite Solutions",
+      "note": "Generated data holds PII and is gitignored."
+    },
+    "inf-sharepoint-transformation": {
+      "client": "SharePoint transformation",
+      "category": "Infinite Solutions"
+    },
+    "inf-vacation-calendar-repo": {
+      "client": "Vacation calendar",
+      "category": "Infinite Solutions"
+    },
+    "phc-dns-repo": {
+      "client": "DNS records",
+      "category": "Prestige"
+    },
+    "phc-help-center-repo": {
+      "client": "Help center",
+      "category": "Prestige",
+      "note": "Uses feat(scope) / fix(scope) commit style. Match it."
+    },
+    "phc-sharepoint-annual-folder": {
+      "client": "Annual folder provisioner",
+      "category": "Prestige",
+      "note": "Phase 1 done. Vaccinations row can block sites."
+    },
+    "harperfinance-repo": {
+      "client": "HarperFinance",
+      "category": "Personal",
+      "note": "D1 overrides on the Era baseline. data.js is never written to. Fetch before deploy."
+    },
+    "williamssisters-website-repo": {
+      "client": "Williams Sisters cookbook",
+      "category": "Personal",
+      "grade": "B-",
+      "note": "Generated from data/*.json by scripts/build_site.py. Edit the JSON, not the HTML. kitchens.html is 8 MB."
+    },
+    "site-checks": {
+      "client": "Static site checker",
+      "category": "Shared tooling",
+      "note": "Run python check_site.py ../<repo> before committing any site."
+    },
+    "form-backend-worker": {
+      "client": "Contact form backend",
+      "category": "Shared tooling",
+      "note": "Cloudflare Worker with D1 and Turnstile. One endpoint for all sites."
+    },
+    "puppyconnection-website-repo": {
+      "client": "Puppy Connection (Amber Blakeslee)",
+      "category": "Research and drafts",
+      "note": "Harvest stage. 107 files of scraped copy, no built site, no git yet."
+    },
+    "braveheartedbirth-website-repo": {
+      "client": "Bravehearted Birth",
+      "category": "Research and drafts",
+      "note": "Single page design mockup, not a build. Copy needs the em dash pass."
+    },
+    "laytonchapel-website-repo": {
+      "client": "Layton Chapel",
+      "category": "Churches",
+      "note": "Static rebuild replacing a SermonAudio template. Durability-first content, keyless YouTube embeds, brand green #00A652."
+    },
+    "inf-keeper-provisioning": {
+      "client": "Keeper provisioning",
+      "category": "Infinite Solutions",
+      "note": "Batch-file generator. Throwaway-tenant test and the General versus Locations decision still open."
+    }
+  }
+}

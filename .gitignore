@@ -1,0 +1,5 @@
+# Generated. Regenerate with `python build.py`.
+# Also kept out of git so an accidental push carries no client data:
+# the page embeds client names, draft-site status, and local paths.
+index.html
+__pycache__/
