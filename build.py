@@ -175,8 +175,10 @@ def page(rows, public, built):
     a('<meta name="viewport" content="width=device-width, initial-scale=1.0">')
     a('<meta name="color-scheme" content="light only">')
     a('<meta name="supported-color-schemes" content="light">')
-    if not public:
-        a('<meta name="robots" content="noindex,nofollow">')
+    # noindex on BOTH builds. The public page is reachable by URL but must not
+    # be indexed: it shows client sites that have not launched yet, and their
+    # business names should not become searchable through this page.
+    a('<meta name="robots" content="noindex,nofollow">')
     a("<title>%s</title>" % title)
     a('<link rel="stylesheet" href="style.css?v=%d">' % CSS_V)
     a("</head>\n<body>")

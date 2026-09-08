@@ -85,8 +85,11 @@ def card(x, tiles_dir="img/tiles", public=False):
           'loading="lazy" decoding="async">' % (esc(tile), esc(title)))
     else:
         a('<span class="noshot"><span>no capture</span></span>')
-    a('<span class="stat s-%s">%s</span>'
-      % (x["status"], esc(STATUS_LABEL.get(x["status"], x["status"]))))
+    # The status badge is internal signal. A visitor does not need to be told
+    # which client sites are unfinished.
+    if not public:
+        a('<span class="stat s-%s">%s</span>'
+          % (x["status"], esc(STATUS_LABEL.get(x["status"], x["status"]))))
     a("</div>")
 
     a('<div class="wbody">')
