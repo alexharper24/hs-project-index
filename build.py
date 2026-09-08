@@ -229,6 +229,11 @@ def main():
     meta = overlay.get("projects", {})
     launch = load_launch()
 
+    # Resolved public URLs from probe.py. Refresh with `python probe.py` after
+    # enabling Pages on a repo or moving a site onto a domain.
+    lp = os.path.join(HERE, "links.json")
+    links = json.loads(read(lp)) if os.path.exists(lp) else {}
+
     repos = discover(meta)
     rows, undescribed = [], []
     for r in repos:
@@ -237,6 +242,9 @@ def main():
         for k in ("client", "eyebrow", "blurb", "grade", "note"):
             info[k] = m.get(k, "")
         info["previews"] = launch.get(r, [])
+        lk = links.get(r, {})
+        info["public_url"] = lk.get("url", "") if lk.get("reachable") else ""
+        info["via"] = lk.get("via", "")
         if not m.get("eyebrow") or not m.get("blurb"):
             undescribed.append(r)
         rows.append(info)
@@ -266,8 +274,11 @@ def main():
         print("PUBLIC build: %d sites, %d thumbnails -> docs/" % (len(rows), kept))
         print("  omitted: grades, open-item counts, uncommitted flags, local")
         print("           paths, and localhost preview links.")
-        nolink = len([x for x in rows if not x["domain"]])
-        print("  %d of %d have no live domain and render without a link." % (nolink, len(rows)))
+        nolink = [x["repo"] for x in rows if not x["public_url"]]
+        if nolink:
+            print("  %d of %d have no reachable public URL: %s"
+                  % (len(nolink), len(rows), ", ".join(nolink)))
+            print("  -> enable Pages on those repos, then re-run: python probe.py")
     else:
         io.open(os.path.join(HERE, "index.html"), "w", encoding="utf-8", newline="\n").write(html)
         tiles = os.path.join(HERE, "img", "tiles")

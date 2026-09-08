@@ -44,18 +44,22 @@ def eyebrow_slug(eyebrow):
 
 
 def target(x, public=False):
-    """Where the card points. Live domain first; local preview otherwise.
+    """Where the card points.
 
-    On a public build a localhost link is useless to a visitor, so a site
-    with no domain gets no link at all.
+    1. the resolved public URL from probe.py (a custom domain, or the repo's
+       GitHub Pages project URL, whichever actually answered 200)
+    2. failing that, the local preview port, but only on the internal build,
+       since a localhost URL is useless to anyone else
+
+    A site with neither gets no link.
     """
-    if x.get("domain"):
-        return "https://%s/" % x["domain"], "Visit site"
+    if x.get("public_url"):
+        return x["public_url"], "Visit site"
     if public:
         return "", ""
     for p in x.get("previews", []):
         if p.get("port"):
-            return "http://localhost:%s/" % p["port"], "Visit site"
+            return "http://localhost:%s/" % p["port"], "Open locally"
     return "", ""
 
 

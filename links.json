@@ -1,0 +1,191 @@
+{
+  "alexharper-website-repo": {
+    "final": "https://harperstudio.co/",
+    "host": "github",
+    "reachable": true,
+    "remote_name": "AlexHarperWeb",
+    "status": 200,
+    "url": "https://harperstudio.co/",
+    "via": "domain"
+  },
+  "auburnmuse-website-repo": {
+    "final": "https://alexharper24.github.io/auburnmuse-website-repo/",
+    "host": "github",
+    "reachable": true,
+    "remote_name": "auburnmuse-website-repo",
+    "status": 200,
+    "url": "https://alexharper24.github.io/auburnmuse-website-repo/",
+    "via": "pages"
+  },
+  "blessyourpaws-website-repo": {
+    "final": "https://alexharper24.github.io/blessyourpaws-website-repo/",
+    "host": "github",
+    "reachable": false,
+    "remote_name": "blessyourpaws-website-repo",
+    "status": 404,
+    "url": "https://alexharper24.github.io/blessyourpaws-website-repo/",
+    "via": "pages"
+  },
+  "braveheartedbirth-website-repo": {
+    "final": "https://alexharper24.github.io/braveheartedbirth-website/",
+    "host": "github",
+    "reachable": false,
+    "remote_name": "braveheartedbirth-website",
+    "status": 404,
+    "url": "https://alexharper24.github.io/braveheartedbirth-website/",
+    "via": "pages"
+  },
+  "breazealebros-website-repo": {
+    "final": "https://alexharper24.github.io/breazealebros-website/",
+    "host": "github",
+    "reachable": false,
+    "remote_name": "breazealebros-website",
+    "status": 404,
+    "url": "https://alexharper24.github.io/breazealebros-website/",
+    "via": "pages"
+  },
+  "calvaryroad-website-repo": {
+    "final": "https://crbcindiana.com/",
+    "host": "github",
+    "reachable": true,
+    "remote_name": "calvaryroad-website",
+    "status": 200,
+    "url": "https://crbcindiana.com/",
+    "via": "domain"
+  },
+  "carvercowood-website-repo": {
+    "final": "https://alexharper24.github.io/CarverCoWood/",
+    "host": "github",
+    "reachable": true,
+    "remote_name": "CarverCoWood",
+    "status": 200,
+    "url": "https://alexharper24.github.io/CarverCoWood/",
+    "via": "pages"
+  },
+  "cornerstonesvcs-website-repo": {
+    "final": "https://alexharper24.github.io/cornerstone-services/",
+    "host": "github",
+    "reachable": true,
+    "remote_name": "cornerstone-services",
+    "status": 200,
+    "url": "https://alexharper24.github.io/cornerstone-services/",
+    "via": "pages"
+  },
+  "detailzmatter-website-repo": {
+    "final": "https://alexharper24.github.io/detailzmatter-website-repo/",
+    "host": "github",
+    "reachable": true,
+    "remote_name": "detailzmatter-website-repo",
+    "status": 200,
+    "url": "https://alexharper24.github.io/detailzmatter-website-repo/",
+    "via": "pages"
+  },
+  "faithsblissfuldelights-website-repo": {
+    "final": "https://faithsblissfuldelights.com/",
+    "host": "github",
+    "reachable": true,
+    "remote_name": "faithsblissfuldelights",
+    "status": 200,
+    "url": "https://faithsblissfuldelights.com/",
+    "via": "domain"
+  },
+  "hope-website-repo": {
+    "final": "https://hopebaptistwarsaw.org/",
+    "host": "github",
+    "reachable": true,
+    "remote_name": "HopeBaptistWarsaw",
+    "status": 200,
+    "url": "https://hopebaptistwarsaw.org/",
+    "via": "domain"
+  },
+  "inf-website": {
+    "final": "https://www.infinitesolutionsllc.com/",
+    "host": "ghe",
+    "reachable": true,
+    "remote_name": "infinite-solutions-web",
+    "status": 200,
+    "url": "https://www.infinitesolutionsllc.com/",
+    "via": "domain"
+  },
+  "kingdomfamilycompanions-website-repo": {
+    "final": "https://alexharper24.github.io/kingdomfamilycompanions-website-repo/",
+    "host": "github",
+    "reachable": true,
+    "remote_name": "kingdomfamilycompanions-website-repo",
+    "status": 200,
+    "url": "https://alexharper24.github.io/kingdomfamilycompanions-website-repo/",
+    "via": "pages"
+  },
+  "laytonchapel-website-repo": {
+    "final": "https://alexharper24.github.io/laytonchapel-website-repo/",
+    "host": "github",
+    "reachable": true,
+    "remote_name": "laytonchapel-website-repo",
+    "status": 200,
+    "url": "https://alexharper24.github.io/laytonchapel-website-repo/",
+    "via": "pages"
+  },
+  "lbc-website-repo": {
+    "final": "https://alexharper24.github.io/lbc-website-repo/",
+    "host": "github",
+    "reachable": true,
+    "remote_name": "lbc-website-repo",
+    "status": 200,
+    "url": "https://alexharper24.github.io/lbc-website-repo/",
+    "via": "pages"
+  },
+  "lorihuss-website-repo": {
+    "final": "https://alexharper24.github.io/lorihuss-website/",
+    "host": "github",
+    "reachable": true,
+    "remote_name": "lorihuss-website",
+    "status": 200,
+    "url": "https://alexharper24.github.io/lorihuss-website/",
+    "via": "pages"
+  },
+  "marysbakingcorner-website-repo": {
+    "final": "https://alexharper24.github.io/marysbakingcorner-website/",
+    "host": "github",
+    "reachable": false,
+    "remote_name": "marysbakingcorner-website",
+    "status": 404,
+    "url": "https://alexharper24.github.io/marysbakingcorner-website/",
+    "via": "pages"
+  },
+  "mldesigns-website-repo": {
+    "final": "https://alexharper24.github.io/mldesigns-website/",
+    "host": "github",
+    "reachable": true,
+    "remote_name": "mldesigns-website",
+    "status": 200,
+    "url": "https://alexharper24.github.io/mldesigns-website/",
+    "via": "pages"
+  },
+  "phillipshaircutting-website-repo": {
+    "final": "https://alexharper24.github.io/phillipshaircutting-website/",
+    "host": "github",
+    "reachable": true,
+    "remote_name": "phillipshaircutting-website",
+    "status": 200,
+    "url": "https://alexharper24.github.io/phillipshaircutting-website/",
+    "via": "pages"
+  },
+  "roanoke-website-repo": {
+    "final": "https://alexharper24.github.io/RoanokeBaptistChurch/",
+    "host": "github",
+    "reachable": true,
+    "remote_name": "RoanokeBaptistChurch",
+    "status": 200,
+    "url": "https://alexharper24.github.io/RoanokeBaptistChurch/",
+    "via": "pages"
+  },
+  "williamssisters-website-repo": {
+    "final": "https://alexharper24.github.io/williamssisters-website-repo/",
+    "host": "github",
+    "reachable": true,
+    "remote_name": "williamssisters-website-repo",
+    "status": 200,
+    "url": "https://alexharper24.github.io/williamssisters-website-repo/",
+    "via": "pages"
+  }
+}
