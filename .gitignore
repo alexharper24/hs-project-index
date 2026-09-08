@@ -1,6 +1,9 @@
-# The INTERNAL page. Carries grades, open-item counts, uncommitted flags, and
-# local filesystem paths, so it must never reach the public repo.
+# The INTERNAL page only. Carries grades, open-item counts, uncommitted flags,
+# and local filesystem paths, so it must never reach the public repo.
 # Regenerate with `python build.py`.
-index.html
+#
+# The leading slash is load-bearing: a bare `index.html` pattern is unanchored
+# and also excluded docs/index.html, which silently published a 404.
+/index.html
 
 __pycache__/
