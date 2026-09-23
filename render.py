@@ -108,6 +108,10 @@ def card(x, tiles_dir="img/tiles", public=False):
 
     if not public:
         bits = []
+        if x.get("gate"):
+            # from the repo's _claude-state.md; "left" rather than "open" so it does not
+            # read as the README checkbox count shown alongside it
+            bits.append("%s &middot; %d left" % (esc(x["gate"]), x.get("open_items") or 0))
         if x.get("grade"):
             bits.append("Grade %s" % esc(x["grade"]))
         if x["pages"]:

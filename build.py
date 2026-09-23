@@ -152,6 +152,18 @@ def scan(repo):
     rd = read(os.path.join(d, "README.md"))
     info["todo"] = len(re.findall(r"^\s*-\s*\[ \]", rd, re.M))
 
+    # The per-project checklist (.claude/guides/project-checklist.md). Only the gate and
+    # the number of open entries are read, by regex so this stays dependency free. A repo
+    # with no file, or a header that does not match, shows no gate rather than failing.
+    info["gate"], info["open_items"] = "", None
+    fm = re.match(r"^---\s*\n(.*?)\n---", read(os.path.join(d, "_claude-state.md")), re.S)
+    if fm:
+        g = re.search(r"^gate:\s*(G[1-5])\b", fm.group(1), re.M)
+        blk = re.search(r"^open:\s*\n(.*?)(?=^\S|\Z)", fm.group(1), re.M | re.S)
+        if g:
+            info["gate"] = g.group(1)
+            info["open_items"] = len(re.findall(r"^\s*-\s*\{", blk.group(1), re.M)) if blk else 0
+
     if not info["is_git"]:
         info["status"] = "no-git"
     elif pages and noindex == pages:
